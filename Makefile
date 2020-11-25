@@ -920,7 +920,7 @@ KBUILD_CFLAGS   += $(call cc-option,-Werror=date-time)
 KBUILD_CFLAGS   += $(call cc-option,-Werror=incompatible-pointer-types)
 
 # Require designated initializers for all marked structures
-KBUILD_CFLAGS   += $(call cc-option,-Werror=designated-init)
+#KBUILD_CFLAGS   += $(call cc-option,-Werror=designated-init)
 
 # use the deterministic mode of AR if available
 KBUILD_ARFLAGS := $(call ar-option,D)
