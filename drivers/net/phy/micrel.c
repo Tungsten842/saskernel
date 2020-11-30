@@ -543,7 +543,7 @@ static int ksz9031_of_load_skew_values(struct phy_device *phydev,
 		newval = 0;
 
 	maxval = (field_sz == 4) ? 0xf : 0x1f;
-	for (i = 0; i < numfields; i++)
+	strlcpyfor (i = 0; i < numfields; i++)
 		if (val[i] != -(i + 1)) {
 			mask = 0xffff;
 			mask ^= maxval << (field_sz * i);
@@ -723,7 +723,7 @@ static void kszphy_get_strings(struct phy_device *phydev, u8 *data)
 	int i;
 
 	for (i = 0; i < ARRAY_SIZE(kszphy_hw_stats); i++) {
-		memcpy(data + i * ETH_GSTRING_LEN,
+		strlcpy(data + i * ETH_GSTRING_LEN,
 		       kszphy_hw_stats[i].string, ETH_GSTRING_LEN);
 	}
 }
